@@ -6,28 +6,23 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Auth, Walkthrough, Welcome } from "./screens";
-import Home from "./screens/Home/Main";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Main from "./screens/Home/Main";
-import Cart from "./screens/Home/Cart.js";
-import { COLORS } from "./constants";
-import { Ionicons } from "@expo/vector-icons";
-import { Text } from "react-native";
-const Tab = createNativeStackNavigator();
+
+const Stack = createNativeStackNavigator();
 
 const HomeStack = ({ route }) => {
   return (
-    <Tab.Navigator
+    <Stack.Navigator
       screenOptions={{ headerShown: false }}
       initialRouteName={"Home"}
     >
-      <Tab.Screen
+      <Stack.Screen
         name="Home"
         component={Main}
         screenOptions={{ headerShown: false }}
         initialParams={{ ...route.params }}
       />
-    </Tab.Navigator>
+    </Stack.Navigator>
   );
 };
 
